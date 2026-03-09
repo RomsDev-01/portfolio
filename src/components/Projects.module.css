@@ -1,0 +1,119 @@
+.projects {
+  padding: 120px 0;
+  border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 400;
+  color: var(--text);
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.subheading {
+  max-width: 340px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Make first project span full width */
+.grid > :first-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid > :first-child .preview {
+  height: 100%;
+  min-height: 220px;
+}
+
+.footer {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.moreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.moreLink:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid > :first-child {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 80px 0;
+  }
+  .container {
+    padding: 0 20px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .subheading {
+    max-width: 100%;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .grid > :first-child {
+    grid-template-columns: 1fr;
+  }
+  .grid > :first-child .preview {
+    height: 200px;
+  }
+}

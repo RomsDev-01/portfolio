@@ -1,0 +1,215 @@
+.about {
+  padding: 120px 0;
+  border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Left */
+.left {
+  position: sticky;
+  top: 100px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.body {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(200, 255, 0, 0.3);
+  padding-bottom: 2px;
+  transition: gap 0.2s, border-color 0.2s;
+  margin-top: 8px;
+}
+
+.link:hover {
+  gap: 10px;
+  border-color: var(--accent);
+}
+
+/* Right */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Avatar */
+.avatarWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
+
+.avatarInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bg-3), var(--surface));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.avatarInitials {
+  font-family: var(--font-display);
+  font-size: 52px;
+  color: var(--text);
+  position: relative;
+  z-index: 1;
+}
+
+.avatarOrbit {
+  position: absolute;
+  inset: -20px;
+  border: 1px dashed rgba(200, 255, 0, 0.15);
+  border-radius: 50%;
+  animation: spin-slow 12s linear infinite;
+}
+
+.orbitDot {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.avatarLabel {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.avatarLabelDot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* Facts */
+.facts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.fact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+
+.fact:last-child {
+  border-bottom: none;
+}
+
+.fact:hover {
+  background: var(--bg-3);
+}
+
+.factIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.factLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
+
+.factValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .left {
+    position: static;
+  }
+  .avatarWrap {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 0;
+  }
+  .container {
+    padding: 0 20px;
+  }
+}

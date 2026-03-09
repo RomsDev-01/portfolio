@@ -1,0 +1,311 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 40px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Background grid */
+.grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200, 255, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 255, 0, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glowing blobs */
+.blob1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(200, 255, 0, 0.06) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+.blob2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(74, 158, 255, 0.05) 0%, transparent 70%);
+  bottom: 0;
+  left: -100px;
+  pointer-events: none;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+/* Availability badge */
+.badge {
+  position: absolute;
+  top: 140px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(200, 255, 0, 0.05);
+  border: 1px solid rgba(200, 255, 0, 0.2);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  animation: fadeIn 1s ease 0.5s backwards;
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 255, 0, 0.4); }
+  50% { box-shadow: 0 0 0 5px rgba(200, 255, 0, 0); }
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.greeting {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  animation: fadeUp 0.6s ease 0.1s backwards;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wave {
+  display: inline-block;
+  animation: wave 2s ease infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-20deg); }
+  40% { transform: rotate(10deg); }
+  60% { transform: rotate(-10deg); }
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 10vw, 120px);
+  font-weight: 400;
+  line-height: 0.95;
+  color: var(--text);
+  margin-bottom: 20px;
+  animation: fadeUp 0.7s ease 0.2s backwards;
+}
+
+.nameHighlight {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(240, 237, 230, 0.3);
+  position: relative;
+}
+
+.nameHighlight::after {
+  content: 'Alfonso';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Typed role */
+.roleWrap {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  animation: fadeUp 0.7s ease 0.3s backwards;
+}
+
+.roleStatic {
+  color: var(--text-muted);
+}
+
+.roleTyped {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.cursor {
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+}
+
+/* Bio */
+.bio {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-bottom: 36px;
+  animation: fadeUp 0.7s ease 0.4s backwards;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  animation: fadeUp 0.7s ease 0.5s backwards;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border-radius: var(--radius);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btnPrimary:hover {
+  background: var(--accent-dim);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(200, 255, 0, 0.2);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btnSecondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  animation: fadeUp 0.7s ease 0.6s backwards;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--text);
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+}
+
+/* Scroll indicator */
+.scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  animation: fadeIn 1s ease 1s backwards;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollAnim 2s ease infinite;
+}
+
+@keyframes scrollAnim {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* Decorative year */
+.decorNum {
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+  font-family: var(--font-display);
+  font-size: clamp(80px, 12vw, 160px);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--border);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 20px 80px;
+  }
+  .badge {
+    display: none;
+  }
+  .scroll {
+    left: 20px;
+  }
+  .decorNum {
+    font-size: 60px;
+  }
+}

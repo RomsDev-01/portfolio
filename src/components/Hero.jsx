@@ -44,7 +44,7 @@ export default function Hero() {
       {/* Floating badge */}
       <div className={styles.badge}>
         <span className={styles.badgeDot} />
-        <span>Available for internships & roles</span>
+        <span>Available for entry level roles</span>
       </div>
 
       <div className={styles.content}>

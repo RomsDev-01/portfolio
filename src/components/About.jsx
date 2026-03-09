@@ -2,7 +2,7 @@ import styles from "./About.module.css";
 
 const facts = [
   { icon: "🎓", label: "Education", value: "B.S. Computer Engineering — Expected April 2026" },
-  { icon: "📍", label: "Location", value: "Nia Rd. Evangelista Baras, Rizal" },
+  { icon: "📍", label: "Location", value: "Baras, Rizal, Philippines" },
   { icon: "💡", label: "Interests", value: "UI/UX, Open Source, Dev Tools" },
   { icon: "🎯", label: "Goal", value: "Land my first frontend engineering role" },
 ];

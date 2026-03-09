@@ -3,6 +3,7 @@ import styles from "./ProjectCard.module.css";
 
 export default function ProjectCard({ project, index }) {
   const [hovered, setHovered] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   return (
     <article
@@ -16,13 +17,25 @@ export default function ProjectCard({ project, index }) {
 
       {/* Preview area */}
       <div className={styles.preview}>
-        <div className={styles.previewBg} />
-        <div className={styles.previewContent}>
-          <div className={styles.previewIcon}>
-            {project.number}
-          </div>
-          <p className={styles.previewTitle}>{project.title}</p>
-        </div>
+        {/* Screenshot thumbnail — falls back to gradient bg if image missing */}
+        {project.screenshot && !imgError ? (
+          <img
+            src={project.screenshot}
+            alt={`${project.title} screenshot`}
+            className={styles.screenshotImg}
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <>
+            <div className={styles.previewBg} />
+            <div className={styles.previewContent}>
+              <div className={styles.previewIcon}>
+                {project.number}
+              </div>
+              <p className={styles.previewTitle}>{project.title}</p>
+            </div>
+          </>
+        )}
 
         {/* Hover overlay */}
         <div className={styles.previewOverlay}>

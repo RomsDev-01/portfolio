@@ -1,3 +1,9 @@
+import img1 from "../images/image-1.png";
+import img2 from "../images/image-2.png";
+import img3 from "../images/image-3.png";
+import img4 from "../images/image-4.png";
+import img5 from "../images/image-5.png";
+
 export const projects = [
   {
     id: 1,
@@ -13,6 +19,7 @@ export const projects = [
     codeUrl: "https://github.com/RomsDev-01/weathernow",
     color: "#4a9eff",
     gradient: "linear-gradient(135deg, #0a2a4a 0%, #1a3a5c 100%)",
+    screenshot: img1,
   },
   {
     id: 2,
@@ -28,6 +35,7 @@ export const projects = [
     codeUrl: "https://github.com/RomsDev-01/taskflow",
     color: "#c8ff00",
     gradient: "linear-gradient(135deg, #1a2a00 0%, #2a3d00 100%)",
+    screenshot: img2,
   },
   {
     id: 3,
@@ -43,6 +51,7 @@ export const projects = [
     codeUrl: "https://github.com/RomsDev-01/cinesearch",
     color: "#ff6b6b",
     gradient: "linear-gradient(135deg, #2a0a0a 0%, #3d1a1a 100%)",
+    screenshot: img3,
   },
   {
     id: 4,
@@ -58,6 +67,7 @@ export const projects = [
     codeUrl: "https://github.com/RomsDev-01/devblog",
     color: "#a78bfa",
     gradient: "linear-gradient(135deg, #1a0a2e 0%, #2d1b5e 100%)",
+    screenshot: img4,
   },
   {
     id: 5,
@@ -73,6 +83,7 @@ export const projects = [
     codeUrl: "https://github.com/RomsDev-01/shopcart",
     color: "#fbbf24",
     gradient: "linear-gradient(135deg, #2a1a00 0%, #3d2a00 100%)",
+    screenshot: img5,
   },
 ];
 
